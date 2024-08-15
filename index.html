@@ -208,13 +208,13 @@
         </div>
         <h1>Dear Ita,</h1>
         <p class="text-content">Hi, how are you? Happy birthday ya Tak, hadiah timepiece ini sebenarnya sekaligus
-            ilsutrasi dan moga kmu suka, boleh kmu pake atau nggak silahkan. Ini penanda bahwa waktu terus bergerak
-            maju. Detik demi detik berlalu, dari menit ke jam, hingga berganti hari, bulan, dan tahun. Apa pun yang uda
-            kmu lewati di belakang cuma kenangan dan pelajaran berharga yang memberi warna dan makna. Ada saat menangis,
-            ada saat tertawa, ada saat di bawah, ada juga saat di atas. Uang, harta dan tahta bisa di cari, di beli dan
-            di raih. Tapi waktu itu anugerah dari Tuhan. Bersyukurlah klo kmu uda di beri waktu 31 tahun ini dengan
-            penyertaan dan campur Tangan Tuhan. Berat, menantang sanang dan penuh kejutan uda kmu lewati. Teruslah
-            berdoa, biar Tuhan selalu pimpin dan bimbing tiap langkahmu ke depan.</p>
+            ilsutrasi dan moga kmu suka, boleh kmu pake atau nggak silahkan. Timepiece ini mengajarkan bahwa waktu terus
+            bergerak maju. Detik demi detik berlalu, dari menit ke jam, hingga berganti hari, bulan, dan tahun. Apa pun
+            yang uda kmu lewati di belakang cuma kenangan dan pelajaran berharga yang memberi warna dan makna. Ada saat
+            menangis, ada saat tertawa, ada saat di bawah, ada juga saat di atas. Uang, harta dan tahta bisa dicari,
+            dibeli dan diraih. Tapi waktu itu anugerah dari Tuhan. Bersyukurlah klo kmu uda di beri waktu 31 tahun ini
+            dengan penyertaan dan campur Tangan Tuhan. Berat, menantang sanang dan penuh kejutan uda kmu lewati.
+            Teruslah berdoa, biar Tuhan Yesus selalu pimpin dan bimbing tiap langkahmu ke depan.</p>
 
         <p class="text-content">Di umurmu yang 31 tahun ini, aku ikut bersyukur kmu uda banyak belajar, berkembang, dan
             banyak kemajuan, walalupun masih ada yang masih kurang dan perlu di perbaiki, that's life. Doa dan
@@ -257,37 +257,38 @@
         <p class="signature">The annoying one, <br><br> Bias Paris</p>
 
         <div class="footer">
-
+            “Percayalah kepada Tuhan dengan segenap hatimu, dan janganlah bersandar kepada pengertianmu sendiri. Akuilah
+            Dia dalam segala lakumu, maka Ia akan meluruskan jalanmu.”
+            Amsal 3 : 5-6 <br><br><br><br>
         </div>
-    </div>
 
-    <button class="toggle-button" onclick="toggleBionicMode()">Toggle Bionic Reading Mode</button>
+        <button class="toggle-button" onclick="toggleBionicMode()">Toggle Bionic Reading Mode</button>
 
-    <script>
-        function checkPassword() {
-            const password = document.getElementById('password').value;
-            if (password === '180893') {
-                document.getElementById('passwordContainer').style.display = 'none';
-                document.querySelector('.container').style.display = 'block';
-                document.querySelector('.toggle-button').style.display = 'block';
-            } else {
-                alert('Incorrect password, please try again.');
+        <script>
+            function checkPassword() {
+                const password = document.getElementById('password').value;
+                if (password === '180893') {
+                    document.getElementById('passwordContainer').style.display = 'none';
+                    document.querySelector('.container').style.display = 'block';
+                    document.querySelector('.toggle-button').style.display = 'block';
+                } else {
+                    alert('Incorrect password, please try again.');
+                }
             }
-        }
 
-        function toggleBionicMode() {
-            const container = document.querySelector('.container');
-            container.classList.toggle('bionic-mode');
+            function toggleBionicMode() {
+                const container = document.querySelector('.container');
+                container.classList.toggle('bionic-mode');
 
-            const textContent = container.querySelectorAll('.text-content');
-            textContent.forEach(paragraph => {
-                paragraph.innerHTML = paragraph.textContent.split(' ').map(word => {
-                    const halfIndex = Math.ceil(word.length / 2);
-                    return `<span><span class="bionic-bold">${word.slice(0, halfIndex)}</span>${word.slice(halfIndex)}</span>`;
-                }).join(' ');
-            });
-        }
-    </script>
+                const textContent = container.querySelectorAll('.text-content');
+                textContent.forEach(paragraph => {
+                    paragraph.innerHTML = paragraph.textContent.split(' ').map(word => {
+                        const halfIndex = Math.ceil(word.length / 2);
+                        return `<span><span class="bionic-bold">${word.slice(0, halfIndex)}</span>${word.slice(halfIndex)}</span>`;
+                    }).join(' ');
+                });
+            }
+        </script>
 </body>
 
 </html>
