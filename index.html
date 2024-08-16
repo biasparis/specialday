@@ -108,6 +108,7 @@
         .bionic-mode span {
             display: inline;
             font-weight: normal;
+            word-break: break-word;
         }
 
         .bionic-mode .bionic-bold {
@@ -182,6 +183,25 @@
             background-color: #006400;
             border-color: #006400;
         }
+
+        .password-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .password-wrapper input[type="password"],
+        .password-wrapper input[type="text"] {
+            padding-right: 40px;
+            width: 200px;
+        }
+
+        .password-wrapper .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -201,7 +221,7 @@
                 Hi Ita, aku coba bikin ucapan anti-mainstream hehehe, jadi ku buatin website. Aku juga nambahin
                 Bionic-reading mode biar enak baca tulisan yang panjang, bisa kamu nyalakan atau kmu matikan kok. aku
                 coba pelajari dikit soal ADHD, dan rupanya Bionic-Reading mode ini memang dibuat untuk orang dengan
-                ADHD, semoga membantu. Klo kmu pengen tahu lebih soal bionic-reading mode
+                ADHD & Dyslexia, semoga membantu. Klo kmu pengen tahu lebih soal bionic-reading mode
                 <a href="https://chatgpt.com/share/dfd2c1a3-ca1a-4dc4-9fbb-ed6326447079" target="_blank"
                     class="elegant-link">KLIK DISINI</a>
             </div>
@@ -219,13 +239,16 @@
         <p class="text-content">Di umurmu yang 31 tahun ini, aku ikut bersyukur kmu uda banyak belajar, berkembang, dan
             banyak kemajuan, walalupun masih ada yang masih kurang dan perlu di perbaiki, that's life. Doa dan
             harapanku selalu yang terbaik buatmu. Apa yang kmu harapkan, doakan, dan usahakan, pasti Tuhan akan berikan
-            sesuai dengan porsi dan waktu-Nya. Dan di depan masih akan ada tantangan yang berat dan menantang, tapi aku
-            percaya karna itu kmu akan semakin kuat dan Tuhan selalu sertai jalanmu.</p>
+            sesuai dengan porsi dan waktu-Nya. Dan di depan masih akan ada tantangan yang berat, tapi percaya, Tuhan
+            masih ada dan pasti mendampingimu. Semangat terus ya! Dan harus tahu, kamu tidak sendirian dalam perjalanan
+            ini. Aku selalu di sini, di dekatmu, mendukung dan mendoakan.</p>
 
-        <p class="text-content">Aku kaget, takut, bingung, dan mencoba merasakan serta melihat dari sudut pandangmu,
-            mulai dari saat kmu mengungkapkan semuanya di Janus di Oktober tgl 23 tahun lalu sepulangmu dari Jogja,
-            sampai pas kmu cerita soal struggle-mu dengan ADHD di Apuro Februari tgl 24 lalu. Jujur, aku ngerasa
-            bersalah se, karna egos banget, tapi aku juga berterima kasih karena kmu mau berbagi, jadi aku tau
+        <p class="text-content">Soal kita, aku hanya mau minta maaf dan terima kasih, minta maaf karena aku terlalu
+            egos, mungkin saat kmu cerita, aku malah nambahin beban dan jadi bukan tempat yang nyaman buat kmu. Aku
+            ngerti kamu udah banyak bercerita dan mengungkapkan semuanya di Janus di Oktober tgl 23 tahun lalu
+            sepulangmu
+            dari Jogja, sampai pas kmu cerita soal struggle-mu dengan ADHD di Apuro Februari tgl 24 lalu. Jujur, aku
+            ngerasa bersalah se, karna egos banget, tapi aku juga berterima kasih karena kmu mau berbagi, jadi aku tau
             strugglemu. Dan hal itu buat aku liat jauh ke belakang, rupanya aku selalu mengusik hidupmu dengan rasa
             cinta yang ku ekspresikan dengan kekiru. Yah, nasi uda jadi bubur. Aku cuma bisa minta maaf karna malah buat
             kmu jengkel, takut, marah, dan banyak hal lain yang buat kmu gak nyaman. I just trying my best for you, but
@@ -262,33 +285,50 @@
             Amsal 3 : 5-6 <br><br><br><br>
         </div>
 
-        <button class="toggle-button" onclick="toggleBionicMode()">Toggle Bionic Reading Mode</button>
+        <button class="toggle-button" onclick="toggleBionicMode()">Bionic-Reading</button>
+    </div>
 
-        <script>
-            function checkPassword() {
-                const password = document.getElementById('password').value;
-                if (password === '180893') {
-                    document.getElementById('passwordContainer').style.display = 'none';
-                    document.querySelector('.container').style.display = 'block';
-                    document.querySelector('.toggle-button').style.display = 'block';
-                } else {
-                    alert('Incorrect password, please try again.');
-                }
+    <script>
+        let isBionicMode = false;
+
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === '180893') {
+                document.getElementById('passwordContainer').style.display = 'none';
+                document.querySelector('.container').style.display = 'block';
+                document.querySelector('.toggle-button').style.display = 'block';
+            } else {
+                alert('Password salah Tak');
             }
+        }
 
-            function toggleBionicMode() {
-                const container = document.querySelector('.container');
-                container.classList.toggle('bionic-mode');
+        function toggleBionicMode() {
+            const container = document.querySelector('.container');
+            isBionicMode = !isBionicMode;
+            container.classList.toggle('bionic-mode', isBionicMode);
 
-                const textContent = container.querySelectorAll('.text-content');
-                textContent.forEach(paragraph => {
-                    paragraph.innerHTML = paragraph.textContent.split(' ').map(word => {
-                        const halfIndex = Math.ceil(word.length / 2);
-                        return `<span><span class="bionic-bold">${word.slice(0, halfIndex)}</span>${word.slice(halfIndex)}</span>`;
+            const textContent = container.querySelectorAll('.text-content');
+            textContent.forEach(paragraph => {
+                if (isBionicMode) {
+                    paragraph.innerHTML = paragraph.textContent.split(/\s+/).map(word => {
+                        if (word.length > 1) {
+                            const halfIndex = Math.ceil(word.length / 2);
+                            return `<span><span class="bionic-bold">${word.slice(0, halfIndex)}</span>${word.slice(halfIndex)}</span>`;
+                        } else {
+                            return `<span>${word}</span>`;
+                        }
                     }).join(' ');
-                });
-            }
-        </script>
+                } else {
+                    paragraph.innerHTML = paragraph.textContent; // Restore original text
+                }
+            });
+
+            const button = document.querySelector('.toggle-button');
+            button.textContent = isBionicMode ? 'Normal-Reading' : 'Bionic-Reading';
+        }
+
+    </script>
+
 </body>
 
 </html>
