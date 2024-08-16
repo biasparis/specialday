@@ -17,55 +17,57 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            font-family: 'Arial', sans-serif;
         }
 
         .container {
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 12px;
-            box-shadow: 0px 0px 20px rgba(0, 128, 0, 0.1);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
             border: 1px solid #e0e0e0;
-            max-width: 700px;
+            max-width: 800px;
             padding: 40px;
             text-align: center;
             display: none;
         }
 
         h1 {
-            color: #006400;
-            font-size: 36px;
+            color: #004d00;
+            font-size: 32px;
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
         p,
         h1,
         span {
-            font-size: 18px;
-            line-height: 1.8;
+            font-size: 16px;
+            line-height: 1.6;
             margin-bottom: 20px;
             text-align: justify;
         }
 
         .green-quote {
             background-color: #e0ffe0;
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
+            font-style: italic;
         }
 
         .signature {
             margin-top: 30px;
             font-style: italic;
-            color: #006400;
-            font-size: 20px;
+            color: #004d00;
+            font-size: 18px;
         }
 
         .header-text {
             background-color: #e0ffe0;
-            padding: 10px 20px;
+            padding: 15px 25px;
             border-radius: 8px;
             margin-bottom: 40px;
             display: inline-block;
             font-weight: bold;
-            position: relative;
         }
 
         .toggle-button {
@@ -73,11 +75,11 @@
             color: #fff;
             border: 1px solid #004d00;
             border-radius: 5px;
-            padding: 10px 20px;
+            padding: 12px 25px;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
-            box-shadow: 0px 4px 10px rgba(0, 128, 0, 0.3);
+            transition: background-color 0.3s, border-color 0.3s;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
             position: fixed;
             bottom: 20px;
             left: 50%;
@@ -87,13 +89,8 @@
         }
 
         .toggle-button:hover {
-            background-color: #006400;
-            border-color: #006400;
-        }
-
-        .toggle-button:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.3);
+            background-color: #005700;
+            border-color: #005700;
         }
 
         .note {
@@ -101,30 +98,16 @@
             font-size: 14px;
             color: #003300;
             font-style: italic;
-            font-family: "Arial", sans-serif;
-            font-weight: 300;
-            text-align: justify;
         }
 
         .bionic-mode span {
             display: inline;
             font-weight: normal;
             word-break: break-word;
-            /* Ensure long words are wrapped correctly */
         }
 
         .bionic-mode .bionic-bold {
             font-weight: bold;
-            display: inline;
-            position: relative;
-            z-index: 1;
-        }
-
-        .bionic-mode span::after {
-            content: '';
-            display: inline-block;
-            width: 0;
-            height: 0;
         }
 
         .footer {
@@ -134,7 +117,7 @@
         }
 
         .footer a {
-            color: #006400;
+            color: #004d00;
             text-decoration: none;
         }
 
@@ -147,12 +130,12 @@
             text-decoration: none;
             font-weight: bold;
             border-bottom: 1px solid #004d00;
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            transition: color 0.3s, border-bottom-color 0.3s;
         }
 
         .elegant-link:hover {
-            color: #006400;
-            border-bottom-color: #006400;
+            color: #005700;
+            border-bottom-color: #005700;
         }
 
         #passwordContainer {
@@ -161,12 +144,12 @@
 
         #passwordContainer input {
             font-size: 18px;
-            padding: 10px;
+            padding: 12px;
             margin-top: 20px;
             border: 1px solid #004d00;
             border-radius: 5px;
             text-align: center;
-            max-width: 200px;
+            max-width: 220px;
         }
 
         #passwordContainer button {
@@ -175,15 +158,15 @@
             color: #fff;
             border: 1px solid #004d00;
             border-radius: 5px;
-            padding: 10px 20px;
+            padding: 12px 25px;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease, border-color 0.3s ease;
+            transition: background-color 0.3s, border-color 0.3s;
         }
 
         #passwordContainer button:hover {
-            background-color: #006400;
-            border-color: #006400;
+            background-color: #005700;
+            border-color: #005700;
         }
 
         .password-wrapper {
@@ -194,7 +177,7 @@
         .password-wrapper input[type="password"],
         .password-wrapper input[type="text"] {
             padding-right: 40px;
-            width: 200px;
+            width: 220px;
         }
 
         .password-wrapper .toggle-password {
@@ -273,18 +256,17 @@
             ekstrovert yang handal bergaul & berbicara dengan lancar dan lantang mengungkapkan perasaan. Tapi ini
             lah aku dengan segala kekurangan, dengan segala kerendahan hati, dengan tulus dan cinta, aku mau ngucapin:
         </p>
-        <p class="green-quote">"Gomawo Ta, sekali lagi kmu merubah aku jauh lebih baik, dan jadi teman satu-satunya
-            yang mendengar keluh kesah dan tangisku. Terimakasih juga uda jadi sekretaris yang mau berkorban waktu,
-            tenaga, pikiran dan perasaan untuk kami di YTWR. Please jangan menjauh ya, I really love you and I really
-            need you. Happy Birthday. Look at you, you are stronger now, and you are strong enough to face tomorrow."
-        </p>
+        <p class="text-content green-quote">"Gomawo Ta, sekali lagi kmu merubah aku jauh lebih baik, dan jadi teman
+            satu-satunya yang mendengar keluh kesah dan tangisku. Terimakasih juga uda jadi sekretaris yang mau
+            berkorban waktu, tenaga, pikiran dan perasaan untuk kami di YTWR. Please jangan menjauh ya, I really love
+            you and I really need you. Happy Birthday. Look at you, you are stronger now, and you are strong enough to
+            face tomorrow."</p>
 
         <p class="signature">The annoying one, <br><br> Bias Paris</p>
 
         <div class="footer">
             “Percayalah kepada Tuhan dengan segenap hatimu, dan janganlah bersandar kepada pengertianmu sendiri. Akuilah
-            Dia dalam segala lakumu, maka Ia akan meluruskan jalanmu.”
-            Amsal 3 : 5-6 <br><br><br><br>
+            Dia dalam segala lakumu, maka Ia akan meluruskan jalanmu.”<br>Amsal 3 : 5-6 <br><br><br><br>
         </div>
 
         <button class="toggle-button" onclick="toggleBionicMode()">Bionic-Reading</button>
@@ -313,19 +295,16 @@
             textContent.forEach(paragraph => {
                 if (isBionicMode) {
                     paragraph.innerHTML = paragraph.textContent.split(/\s+/).map(word => {
-                        // Determine the number of characters to bold
                         let boldLength;
                         if (word.length === 1) {
-                            boldLength = 1; // If the word has only one character, bold it entirely
+                            boldLength = 1;
                         } else {
-                            // For odd lengths, bold less than half
                             boldLength = Math.floor(word.length / 2);
                         }
-
                         return `<span style="white-space: nowrap;"><span class="bionic-bold">${word.slice(0, boldLength)}</span>${word.slice(boldLength)}</span>`;
                     }).join(' ');
                 } else {
-                    paragraph.innerHTML = paragraph.textContent; // Restore original text
+                    paragraph.innerHTML = paragraph.textContent;
                 }
             });
 
@@ -334,7 +313,6 @@
         }
 
     </script>
-
 </body>
 
 </html>
