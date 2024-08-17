@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Body styling */
         body {
             background-color: #f5f5f5;
             color: #333;
@@ -20,6 +21,7 @@
             font-family: 'Arial', sans-serif;
         }
 
+        /* Container styling */
         .container {
             background-color: #ffffff;
             border-radius: 12px;
@@ -31,6 +33,7 @@
             display: none;
         }
 
+        /* Header styling */
         h1 {
             color: #004d00;
             font-size: 32px;
@@ -38,6 +41,7 @@
             font-weight: 600;
         }
 
+        /* Text styling */
         p,
         h1,
         span {
@@ -47,6 +51,7 @@
             text-align: justify;
         }
 
+        /* Green quote styling */
         .green-quote {
             background-color: #e0ffe0;
             padding: 15px;
@@ -54,6 +59,7 @@
             font-style: italic;
         }
 
+        /* Signature styling */
         .signature {
             margin-top: 30px;
             font-style: italic;
@@ -61,6 +67,7 @@
             font-size: 18px;
         }
 
+        /* Header text styling */
         .header-text {
             background-color: #e0ffe0;
             padding: 15px 25px;
@@ -70,29 +77,38 @@
             font-weight: bold;
         }
 
-        .toggle-button {
-            background-color: #004d00;
-            color: #fff;
-            border: 1px solid #004d00;
-            border-radius: 5px;
-            padding: 12px 25px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s, border-color 0.3s;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        /* Toggle button styling */
+        .toggle-buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
             position: fixed;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            display: none;
         }
 
-        .toggle-button:hover {
+        .toggle-button,
+        .tips-button {
+            background-color: #004d00;
+            color: #fff;
+            border: 1px solid #004d00;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            flex: 1;
+        }
+
+        .toggle-button:hover,
+        .tips-button:hover {
             background-color: #005700;
             border-color: #005700;
         }
 
+        /* Note styling */
         .note {
             margin-top: 20px;
             font-size: 14px;
@@ -100,6 +116,7 @@
             font-style: italic;
         }
 
+        /* Bionic Reading styles */
         .bionic-mode span {
             display: inline;
             font-weight: normal;
@@ -110,6 +127,7 @@
             font-weight: bold;
         }
 
+        /* Footer styling */
         .footer {
             margin-top: 40px;
             font-size: 14px;
@@ -125,6 +143,7 @@
             text-decoration: underline;
         }
 
+        /* Elegant link styling */
         .elegant-link {
             color: #004d00;
             text-decoration: none;
@@ -138,6 +157,7 @@
             border-bottom-color: #005700;
         }
 
+        /* Password container styling */
         #passwordContainer {
             text-align: center;
         }
@@ -169,6 +189,7 @@
             border-color: #005700;
         }
 
+        /* Password wrapper styling */
         .password-wrapper {
             position: relative;
             display: inline-block;
@@ -187,7 +208,128 @@
             transform: translateY(-50%);
             cursor: pointer;
         }
+
+        /* Modal content adjustments */
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 900px;
+            height: 80%;
+            max-height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Carousel slide adjustments */
+        .carousel-slide {
+            display: none;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* Center the text */
+            flex-direction: column;
+            /* Ensure the content stacks vertically */
+            padding: 100px;
+        }
+
+        /* Adjustments to the navigation buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 6px 12px;
+            color: #bbb;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: none;
+            text-decoration: none;
+            transition: color 0.3s;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 10px;
+            /* Adjust position */
+        }
+
+        .next {
+            right: 10px;
+            /* Adjust position */
+        }
+
+        /* Ensure the close button does not affect centering */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Additional styling for carousel indicators */
+        .carousel-indicators {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            transition: background-color 0.3s, width 0.3s, height 0.3s;
+        }
+
+        .indicator.active {
+            background-color: #004d00;
+            width: 12px;
+            height: 12px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+        .p-car {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            line-height: 1.2;
+            margin: 2px 0;
+        }
+
+        .p-hed {
+            font-family: 'Lato', sans-serif;
+            font-size: 36px;
+            line-height: 1.2;
+            font-weight: 800;
+            color: #004d00;
+            margin: 4px 0;
+        }
     </style>
+
 </head>
 
 <body>
@@ -199,67 +341,171 @@
     </div>
 
     <div class="container">
+
+        <!-- Modal Structure -->
+        <div id="tipsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeTipsModal()">&times;</span>
+                <div class="carousel-container">
+
+                    <div class="carousel-slide">
+                        <p class="p-hed">Hidup dengan ADHD Inattentive & anxiety?</p>
+                        <p class="p-car">Jangan khawatir, kmu nggak sendiri. Intip tips simpel yg ku pelajari! moga
+                            membantu</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <p class="p-hed">Create a Daily Structure:</p>
+                        <p class="p-car">Rutin tapi fleksibel. Catat rutinitasmu buat hari kamu lebih terstruktur.</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <p class="p-hed">Chunking Tasks:</p>
+                        <p class="p-car">Pake teknik Pomodoro: 25 menit kerja, 5 menit istirahat. Biar fokus tetap
+                            terjaga.</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <p class="p-hed">Visual Reminders:</p>
+                        <p class="p-car">Sticky notes atau reminder di HP. Biar tugas penting nggak kelewat.</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <p class="p-hed">Love Yourself:</p>
+                        <p class="p-car">Progress, bukan kesempurnaan. Jangan terlalu keras sama diri sendiri!</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <p class="p-hed">Physical Activity:</p>
+                        <p class="p-car">Jalan kaki sebentar aja udah cukup. Bantu ngurangin anxiety, ningkatin fokus.
+                            (kmu uda
+                            ngelakuin ini, that's great)</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <p class="p-hed">Digital Declutter:</p>
+                        <p class="p-car">Buat workspace digital yang rapi (di HP atau laptomu). Batasi distraksi dengan
+                            matiin
+                            notifikasi.</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <p class="p-hed">Set Boundaries:</p>
+                        <p class="p-car">Jaga energi, bilang "nggak" kalau perlu. Jadwalkan waktu buat diri sendiri.</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <p class="p-hed">Therapeutic Journaling:</p>
+                        <p class="p-car">Tulis jurnal harianmu, buat tahu apa yang terjadi, hal ini bisa meringankan
+                            beban secara gak
+                            langsung sekaligus tau triger-trigernya. (yess,kmu uda molai juga kan)</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <p class="p-hed">Mindful Eating:</p>
+                        <p class="p-car">Rencanakan makan yang seimbang. Biar energi stabil, hindari nggak ngemil saat
+                            stres. Ingat
+                            hindari tepung & manis dulu yaa, kita lihat apakah works hehehe</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <p class="p-hed">Kamu Pasti Bisa Ta!!</p>
+                        <p class="p-car">Jangan lupa, kamu nggak sendirian. Dengan tips ini, semoga hidup jadi lebih
+                            manageable!
+                        <h3>화이팅 💪</h3>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+                <a class="prev" onclick="prevSlide()">&#10094;</a>
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+            </div>
+        </div>
+
+
         <div class="header-text">
             Note..
             <div class="note">
-                Hi Ita, aku coba bikin tulisan buat kmu, tapi yang anti-mainstream hehehe, jadi ku buatin website aja,
-                sesuai kemampuanku. Oh iya, aku juga nambahin Bionic-reading biar enak baca cepat tulisan yang panjang,
-                bisa kamu nyalakan atau kmu matikan kok pake tombol ijo dibawah. Aku coba pelajari dikit soal ADHD, dan
-                aku nemu Bionic-Reading ini salah satu life hack untuk orang dengan ADHD & Dyslexia, semoga membantu ya.
-                Btw klo kmu pengen tahu lebih soal bionic-reading mode, aku summary nya
+                Hi Ita, dari sudut kamarku yang sempit & rumahku yang sepi aku coba bikin tulisan buat kmu, ku coba
+                sesuatu yang anti-mainstream hehehe, jadi ku buatin website aja, sesuai kemampuanku. Oh iya, aku juga
+                nambahin Bionic-reading biar enak baca cepat tulisan yang panjang, bisa kamu nyalakan atau kmu matikan
+                kok pake tombol ijo dibawah. Aku coba pelajari dikit soal ADHD, dan aku nemu Bionic-Reading ini salah
+                satu life hack untuk orang dengan ADHD & Dyslexia, semoga membantu ya. Btw klo kmu pengen tahu lebih
+                soal bionic-reading mode, aku summary nya
                 <a href="https://chatgpt.com/share/dfd2c1a3-ca1a-4dc4-9fbb-ed6326447079" target="_blank"
                     class="elegant-link">KLIK DISINI</a> buat buka. Atau di web resmi mereka yang bisa di akses di
                 <a href="https://bionic-reading.com/br-method/" target="_blank" class="elegant-link">
-                    https://bionic-reading.com</a> (klo web better kmu buka di laptop)
+                    https://bionic-reading.com</a> (klo web better kmu buka di laptop). Ada sedikit life hack juga buat
+                kmu yang aku dapetin dari cari-cari info singkat.
             </div>
         </div>
         <h1>Dear Ita,</h1>
-        <p class="text-content">Hi, how are you? Happy birthday ya Tak, hadiah timepiece ini sebenarnya sekaligus
-            ilsutrasi dan moga kmu suka, boleh kmu pake atau nggak silahkan. Timepiece ini mengajarkan bahwa waktu terus
-            bergerak maju. Detik demi detik berlalu, dari menit ke jam, hingga berganti hari, bulan, dan tahun. Apa pun
-            yang uda kmu lewati di belakang cuma kenangan dan pelajaran berharga yang memberi warna dan makna. Ada saat
-            menangis, ada saat tertawa, ada saat di bawah, ada juga saat di atas. Uang, harta dan tahta bisa dicari,
-            dibeli dan diraih. Tapi waktu itu anugerah dari Tuhan. Bersyukurlah klo kmu uda di beri waktu 31 tahun ini
-            dengan penyertaan dan campur Tangan Tuhan. Berat, menantang sanang dan penuh kejutan uda kmu lewati.
-            Teruslah berdoa, biar Tuhan Yesus selalu pimpin dan bimbing tiap langkahmu ke depan.</p>
+        <p class="text-content">Hi, how are you? Happy birthday ya Tak. Aku kasi hadiah Casio F-91W, salah satu
+            jam tangan digital paling terkenal dan iconic dari Casio. Diluncurkan pada tahun 1991, jam tangan ini
+            terkenal karena desainnya yang sederhana, fungsi dasar yang berguna, dan daya tahan yang sangat baik, dan
+            gakl terlalu mahal tentunya. Beberapa artis cewe yang pake ada Gigi Hadid, Emma Watson, Sarah Jessica
+            Parker, Kim Kardashian dan tentu Putri Marino di film borderless fog, moga kamu suka ya, boleh kmu pake, gak
+            juga monggo. Timepiece ini sebenarnya sekaligus ilsutrasi, yang mengajarkan bahwa waktu terus
+            bergerak maju. Detik demi detik berlalu, dari menit ke jam, hingga berganti hari, bulan, dan tahun.
+            Apa pun yang uda kmu lewati di belakang cuma kenangan dan pelajaran berharga yang memberi warna dan makna.
+            Ada saat menangis, ada saat tertawa, ada saat di bawah, ada juga saat di atas. Uang, harta dan tahta bisa
+            dicari, dibeli dan diraih. Tapi waktu itu anugerah dari Tuhan. Bersyukurlah klo kmu uda di beri waktu 31
+            tahun ini dengan penyertaan dan campur Tangan Tuhan. Berat, menantang sanang dan penuh kejutan uda kmu
+            lewati. Teruslah berdoa & berjuang, biar Tuhan Yesus selalu pimpin dan bimbing tiap langkahmu ke depan.</p>
 
-        <p class="text-content">Di umurmu yang 31 tahun ini, aku ikut bersyukur kmu uda banyak belajar, berkembang, dan
-            banyak kemajuan, walalupun ada yang masih kurang dan perlu di perbaiki, that's life. Doa dan harapanku
+        <p class="text-content">Di umurmu yang 31 tahun ini, aku ikut bersyukur kmu uda banyak belajar, berkembang,
+            dan banyak kemajuan, walalupun ada yang masih kurang dan perlu di perbaiki, that's life. Doa dan harapanku
             selalu yang terbaik buatmu. Apa yang kmu harapkan, doakan, dan usahakan, pasti Tuhan akan berikan sesuai
-            dengan porsi dan waktu-Nya. Dan di depan masih akan ada tantangan yang berat dan menantang, tapi aku
-            percaya karna itu kmu akan semakin kuat dan Tuhan selalu sertai jalanmu.</p>
+            dengan porsi dan waktu-Nya. Dan di depan masih akan ada petualangan hidup yang berat dan menantang, tapi aku
+            percaya karna kmu akan buat kmu semakin kuat dan Tuhan pasti selalu sertai jalanmu.</p>
 
         <p class="text-content">Aku kaget, takut, bingung, dan mencoba merasakan serta melihat dari sudut pandangmu,
             mulai dari saat kmu mengungkapkan semuanya di Janus di Oktober tgl 23 tahun lalu sepulangmu dari Jogja,
-            bahkan sampai pas kmu cerita soal struggle-mu dengan ADHD di Apuro Februari tgl 24 lalu. Jujur, aku ngerasa
-            bersalah, karna rupanya aku egos banget, tapi aku juga berterima kasih karena kmu mau berbagi cerita, jadi
-            aku tau apa yang kamu rasakan dan hadapi selama ini. Dan hal itu juga buat aku liat jauh ke belakang,
-            rupanya aku selalu mengusik hidupmu dengan rasa cinta yang ku ekspresikan dengan kekiru. Yah, nasi uda jadi
-            bubur. Aku cuma bisa minta maaf karna malah buat kmu jengkel, takut, marah, dan banyak hal lain yang buat
-            kmu gak nyaman. I just trying my best for you, but it's my bad I'm not good enough to understand you first,
-            and I always prioritize my ego. It just me being annoying. but I'm learning now, and try to change and fix
-            it, I hope you see it.</p>
+            bahkan sampai pas kmu cerita soal struggle-mu dengan ADHD di Apuro Februari tgl 24 lalu. Jujur, aku
+            ngerasa bersalah, karna rupanya aku egos banget, tapi aku juga berterima kasih karena kmu mau berbagi
+            cerita, jadi aku tau apa yang kamu rasakan dan hadapi selama ini. Dan hal itu juga buat aku liat jauh ke
+            belakang, rupanya aku selalu mengusik hidupmu dengan rasa cinta yang ku ekspresikan dengan kekiru. Yah, nasi
+            uda jadi bubur. Aku cuma bisa minta maaf, karna malah buat kmu jengkel, takut, marah, dan banyak hal lain
+            yang buat kmu gak nyaman. I just trying my best for you, but it's my bad I'm not good enough to understand
+            you first, and I always prioritize my ego. It just me being annoying. but I'm learning now, and try to
+            change and fix it, I hope you see it.</p>
 
-        <p class="text-content">Ta Apa pun pilihan hidupmu, aku akan dukung dan doakan. Soal karir, hobi, pilihan hidup,
-            bahkan cowo yang kmu pilih nanti, aku akan mendukung apa pun dan siapa pun yang kmu pilih, meskipun
+        <p class="text-content">Ta Apa pun pilihan hidupmu, aku akan dukung dan doakan. Soal karir, hobi, pilihan
+            hidup, bahkan cowo yang kmu pilih nanti, aku akan mendukung apa pun dan siapa pun yang kmu pilih, meskipun
             mungkin itu bukan aku. It’s hurts like hell, asal kmu nyaman dan bahagia, aku akan dukung. That's what I
-            learn about UNCONDITIONAL LOVE, cinta sesungguhnya yang tidak menuntut, berbalas atau tidak,
-            sakit atau sehat, bahagia atau sedih, kaya atau miskin, apapun kondisinya aku tetep sayang kmu. Apapun
-            cerita dan keluhan mu telingaku ada untuk mendengar, tangan ku siap membantu dan selalu terlipat untuk
-            mendoakanmu. Kakiku mungkin bisa lelah, tapi akan tetap melangkah dan berlari mendampingimu, mataku selalu
-            ada untuk mengagumi dan menjagamu dari jauh. Mulutku selalu ada buat menasehati dan menegur kalau kmu salah,
-            memuji setiap keberhasilanmu dan menguatkan saat kmu lemah. Pundakku selalu ada buat kmu bersandar,
-            pikiranku selalu memikirkan yang terbaik buat kmu. Rumah dan hatiku selalu terbuka buat kmu. I may not have
-            much to offer, but there is one thing I am sure of. You can come to me when you feel like everything is
-            heavy, anytime. I may not have all the answers, but I’ll listen and your heart is safe here.</p>
+            learn about UNCONDITIONAL LOVE, cinta guhnya yang tidak menuntut, berbalas atau tidak, sakit atau sehat,
+            bahagia atau sedih, kaya atau miskin, apapun kondisinya aku tetep sayang kmu. Apapun cerita dan keluhan mu
+            telingaku ada untuk mendengar,tangan ku siap membantu dan selalu terlipat untuk mendoakanmu. Kakiku mungkin
+            bisa lelah, tapi akan tetap melangkah dan berlari mendampingimu, mataku selalu ada untuk mengagumi dan
+            menjagamu dari jauh. Mulutku selalu ada buat menasehati dan menegur kalau kmu salah, memuji setiap
+            keberhasilanmu dan menguatkan saat kmu lemah. Pundakku selalu ada buat kmu bersandar, pikiranku selalu
+            memikirkan yang terbaik buat kmu. Rumah dan hatiku selalu terbuka buat kmu. I may not have much to offer,
+            but there is one thing I am sure of. You can come to me when you feel like everything is heavy,anytime. I
+            may not have all the answers, but I’ll listen and your heart is safe here. Akan ku temani kmu sampe bertemu
+            cowo yang cocok, pantas, tulus, baik, takut Tuhan dan mencintaimu apa adanya, sehingga dia bisa mendapatkan
+            Tabita Termiati Makitan dengan versi terbaikmu, dan aku bisa berkata "my job is over, you deserve the best
+            of the best, and you don't need me anymore and your annoying one will gone"</p>
 
-        <p class="text-content">Aku bukan seorang penulis handal dengan tulisan sederhana tapi kaya makna. Bukan juga
-            pemilik wajah rupawan yang charming dan pantas dibanggakan. Bukan juga lelaki kaya yang punya segalanya.
-            Tapi ini lah aku dengan segala kekurangan, dengan segala kerendahan hati, dengan tulus dan cinta. Berusaha
-            akan selalu berusaha memantaskan diri untuk sosok wanita yang ku kagumi.</p>
+        <p class="text-content">Aku bukan seorang penulis handal dengan tulisan sederhana tapi kaya makna. Bukan
+            juga pemilik wajah rupawan yang charming yang sedap dipandang dan pantas dibanggakan. Bukan juga pria kaya
+            yang punya segalanya. Tapi ini lah aku dengan segala kekurangan, dengan segala kerendahan hati, dengan tulus
+            dan cinta, akan selalu berusaha, belajar, dan memantaskan diri untuk sosok wanita yang ku cintai.</p>
 
         <p class="text-content green-quote">"Gomawo Ita, sekali lagi kmu merubah aku jauh lebih baik, dan jadi teman
-            satu-satunya yang mendengar keluh kesah dan tangisku belakangan ini. Terimakasih juga uda jadi sekretaris
+            satu-satunya yang mendengar keluh kesah dan tangisku selama ini. Jujur aku belum pernah punya teman seperti
+            kmu, dimana aku berani mengungkapkan segalanya & jadi diri sendiri. Terimakasih juga uda jadi sekretaris
             yang mau berkorban waktu, tenaga, pikiran dan perasaan untuk kami di YTWR. Please jangan menjauh ya, I
             really love you and I really need you. Happy Birthday. And look at you now, you are stronger, and you are
             strong enough to face tomorrow."</p>
@@ -267,11 +513,15 @@
         <p class="signature">The annoying one, <br><br> Bias Paris</p>
 
         <div class="footer">
-            “Percayalah kepada Tuhan dengan segenap hatimu, dan janganlah bersandar kepada pengertianmu sendiri. Akuilah
-            Dia dalam segala lakumu, maka Ia akan meluruskan jalanmu.”<br>Amsal 3 : 5-6 <br><br><br><br>
+            “Percayalah kepada Tuhan dengan segenap hatimu, dan janganlah bersandar kepada pengertianmu sendiri.
+            Akuilah Dia dalam segala lakumu, maka Ia akan meluruskan jalanmu.”<br>Amsal 3 : 5-6 <br><br><br><br>
         </div>
 
-        <button class="toggle-button" onclick="toggleBionicMode()">Bionic-Reading</button>
+        <div class="toggle-buttons-container">
+            <button class="tips-button" onclick="openModal()">Tips4U</button>
+            <button class="toggle-button" onclick="toggleBionicReading()">Bionic</button>
+        </div>
+
     </div>
 
     <script>
@@ -283,12 +533,13 @@
                 document.getElementById('passwordContainer').style.display = 'none';
                 document.querySelector('.container').style.display = 'block';
                 document.querySelector('.toggle-button').style.display = 'block';
+                document.querySelector('.tips-button').style.display = 'block'; // Ensure this line is present
             } else {
                 alert('Password salah Tak');
             }
         }
 
-        function toggleBionicMode() {
+        function toggleBionicReading() {
             const container = document.querySelector('.container');
             isBionicMode = !isBionicMode;
             container.classList.toggle('bionic-mode', isBionicMode);
@@ -311,7 +562,46 @@
             });
 
             const button = document.querySelector('.toggle-button');
-            button.textContent = isBionicMode ? 'Normal-Reading' : 'Bionic-Reading';
+            button.textContent = isBionicMode ? 'Normal' : 'Bionic';
+        }
+
+
+        function closeModal() {
+            document.getElementById("tipsModal").style.display = "none";
+        }
+
+        function openModal() {
+            document.getElementById("tipsModal").style.display = "block";
+            showSlide(currentSlide); // Ensure the correct slide is shown when opening the modal
+        }
+
+        document.querySelector('.close').addEventListener('click', closeModal);
+
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName("carousel-slide");
+            const indicators = document.getElementsByClassName("indicator");
+            if (n >= slides.length) currentSlide = 0;
+            if (n < 0) currentSlide = slides.length - 1;
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                indicators[i].className = indicators[i].className.replace(" active", "");
+            }
+            slides[currentSlide].style.display = "block";
+            indicators[currentSlide].className += " active";
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide -= 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide += 1);
+        }
+
+        window.onload = function () {
+            showSlide(currentSlide);
         }
 
     </script>
