@@ -21,6 +21,12 @@
             font-family: 'Arial', sans-serif;
         }
 
+        /* Blur background when modal is open */
+        body.modal-open .container {
+            filter: blur(8px);
+            transition: filter 0.3s;
+        }
+
         /* Container styling */
         .container {
             background-color: #ffffff;
@@ -369,110 +375,6 @@
 
     <div class="container">
 
-        <!-- Modal Structure -->
-        <div id="tipsModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeTipsModal()">&times;</span>
-                <div class="carousel-container">
-
-                    <div class="carousel-slide">
-                        <p class="p-hed">ADHD Inattentive & anxiety?</p>
-                        <p class="p-car">Khawatir, bingung dan takut itu normal, kita semua ngerasain itu, tapi kmu
-                            nggak sendiri kok. Ini ada tips simpel yg ku dapet & pelajari belakangan! moga membantu</p>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <p class="p-hed">Create a Daily Structure:</p>
-                        <p class="p-car">Rutin tapi fleksibel. Catat rutinitasmu, ini akan buat harimu lebih
-                            terstruktur. Yang namanya rutinintas pasti berulang, ada baiknya klo kmu punya SOP versimu
-                            sendiri buat nyelesaiin rutinitas tertentu. Tapi inget, tetap flexible dengan koreksi &
-                            perubahan ya, gak semua akan jalan semau-maunya kita semua.</p>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <p class="p-hed">Chunking Tasks:</p>
-                        <p class="p-car">Pake teknik Pomodoro: 25 menit kerja, 5 menit istirahat, biar kmu fokus & tetap
-                            terjaga. waktunya bisa kamu atur dan sesuikan sendiri. Inget 5 menit istirahat, jangan
-                            bablas, kmu bisa pake alarm atau reminder atau timer di HP atau di Casio yang ku kasih.</p>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <p class="p-hed">Visual Reminders:</p>
-                        <p class="p-car">Pake Sticky notes atau reminder di HP. Biar tugas penting gak kelewat. Dan kamu
-                            ku lihat di ruanganmu uda pakai ini kan, that's good.</p>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <p class="p-hed">Love Yourself:</p>
-                        <p class="p-car">Ingat, Progress over perfection. Jangan terlalu keras sama diri sendiri! Gagal
-                            & gak sesuai rencana itu selalu ada. Rayakan & hargai tiap progres sekecil apapun, you can
-                            do it.</p>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <p class="p-hed">Physical Activity:</p>
-                        <p class="p-car">Jalan kaki sebentar aja udah cukup kok. Bisa bantu ngurangin anxiety &
-                            ningkatin fokus. Berdasarkan pengalaman klo ini. Dan kmu uda ngelakuin ini kan, that's
-                            great, good job</p>
-                    </div>
-                    <div class="carousel-slide">
-                        <p class="p-hed">Digital Declutter:</p>
-                        <p class="p-car">Buat workspace digitalmu lebih rapi (di HP atau laptomu), hapus file yg gak
-                            perlu, rapikan folder-foldermu. Batasi distraksi dengan matiin notifikasi & atur screentime
-                            buat aplikasi tertentu, biar kamu gak kebablasan.</p>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <p class="p-hed">Set Boundaries:</p>
-                        <p class="p-car">Jaga energimu, jangan sungkan bilang "nggak" kalau perlu. Juga jadwalkan waktu
-                            buat me time.</p>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <p class="p-hed">Journaling:</p>
-                        <p class="p-car">Tulis jurnal harianmu, buat tahu apa yang terjadi, hal ini bisa meringankan
-                            beban dan yang secara gak langsung bisa tau triger-trigernya. setelah beberapa waktu, lewat
-                            jurnal ini kamu bisa bercermin lagi & tau seberapa jauh progressmu. Yess,kmu uda molai juga
-                            kan, I'm happy for that.</p>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <p class="p-hed">Mindful Eating:</p>
-                        <p class="p-car">Makan makanan yang sehat. Biar energi stabil, hindari ngemil saat stres.
-                            Kekenyangan malah bikin meles, ngantuk akhirnya ada domini efek ke hal-hal lainya. Ingat
-                            kata dokter: hindari tepung & manis dulu, kita lihat apakah works hehehe</p>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <p class="p-hed">Kamu Pasti Bisa!!</p>
-                        <p class="p-car">Jangan lupa, kamu nggak sendirian, ada aku, ada papa mama, ada Kak
-                            Gadi, Mbak Ayu & Banyu, ada Yonna, ada Kebo, ada juga temenmu yang lainya yang mungkin aku
-                            gak kenal. Kami adalah orang-orang yang sayang & peduli kamu.
-                            <br>
-                        <h3>화이팅 💪</h3>
-                        </p>
-                    </div>
-
-                </div>
-                <div class="carousel-indicators">
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                    <span class="indicator"></span>
-                </div>
-                <a class="prev" onclick="prevSlide()">&#10094;</a>
-                <a class="next" onclick="nextSlide()">&#10095;</a>
-            </div>
-        </div>
-
-
         <div class="header-text">
             NOTE:
             <div class="note">
@@ -507,7 +409,7 @@
             dan banyak kemajuan, walalupun ada yang masih kurang dan perlu di perbaiki, that's life. Doa dan harapanku
             selalu yang terbaik buatmu. Apa yang kmu harapkan, doakan, dan usahakan, pasti Tuhan akan berikan sesuai
             dengan porsi dan waktu-Nya. Dan di depan masih akan ada petualangan hidup yang berat dan menantang, tapi aku
-            percaya karna kmu akan buat kmu semakin kuat dan Tuhan pasti selalu sertai jalanmu.</p>
+            percaya dengan penyertaan Tuhan, kmu pasti bisa.</p>
 
         <p class="text-content">Aku kaget, takut, bingung, dan mencoba merasakan serta melihat dari sudut pandangmu,
             mulai dari saat kmu mengungkapkan semuanya di Janus di Oktober tgl 23 tahun lalu sepulangmu dari Jogja,
@@ -515,40 +417,40 @@
             ngerasa bersalah, karna rupanya aku egos banget, tapi aku juga berterima kasih karena kmu mau berbagi
             cerita, jadi aku tau apa yang kamu rasakan dan hadapi selama ini. Dan hal itu juga buat aku liat jauh ke
             belakang, rupanya aku selalu mengusik hidupmu dengan rasa cinta yang ku ekspresikan dengan kekiru. Yah, nasi
-            uda jadi bubur. Aku cuma bisa minta maaf, karna malah buat kmu jengkel, takut, marah, dan banyak hal lain
-            yang buat kmu gak nyaman. I just trying my best for you, but it's my bad I'm not good enough to understand
-            you first, and I always prioritize my ego. It just me being annoying. but I'm learning now, and try to
-            change and fix it, I hope you see it.</p>
+            uda jadi bubur, aku gak bisa merubah yang sudah berlalu. Sudut pandangmu udah kadung gak banget ke aku. Aku
+            cuma bisa minta maaf, karna aku malah buat kmu jengkel, takut, marah, dan banyak hal lain yang buat kmu gak
+            nyaman. "I’ve always been doing my best for you, but I messed up by not understanding you at first and
+            letting my ego get in. Now I realize that I’ve been annoying. I’m learning and trying to change. I hope you
+            notice that."</p>
 
         <p class="text-content">Ta Apa pun pilihan hidupmu, aku akan dukung dan doakan. Soal karir, hobi, pilihan
             hidup, bahkan cowo yang kmu pilih nanti, aku akan mendukung apa pun dan siapa pun yang kmu pilih, meskipun
             mungkin itu bukan aku. It’s hurts like hell, asal kmu nyaman dan bahagia, aku akan dukung. That's what I
-            learn about UNCONDITIONAL LOVE, cinta guhnya yang tidak menuntut, berbalas atau tidak, sakit atau sehat,
-            bahagia atau sedih, kaya atau miskin, apapun kondisinya aku tetep sayang kmu. Apapun cerita dan keluhan mu
-            telingaku ada untuk mendengar,tangan ku siap membantu dan selalu terlipat untuk mendoakanmu. Kakiku mungkin
-            bisa lelah, tapi akan tetap melangkah dan berlari mendampingimu, mataku selalu ada untuk mengagumi dan
-            menjagamu dari jauh. Mulutku selalu ada buat menasehati dan menegur kalau kmu salah, memuji setiap
-            keberhasilanmu dan menguatkan saat kmu lemah. Pundakku selalu ada buat kmu bersandar, pikiranku selalu
-            memikirkan yang terbaik buat kmu. Rumah dan hatiku selalu terbuka buat kmu. I may not have much to offer,
-            but there is one thing I am sure of. You can come to me when you feel like everything is heavy, anytime. I
-            may not have all the answers, but I’ll listen and your heart is safe here. Akan ku dampingi sampe kmu
-            bertemu cowo yang kamu impikan, yang ganteng, cocok, pantas, tulus, baik, effot, mau berjuang buat kmu,
-            takut Tuhan dan mencintaimu apa adanya, sehingga kelak dia bisa mendapatkan Tabita Termiati Makitan dengan
-            versi terbaikmu. Aku juga akan selalu setia menemani kamu sampai kamu mendapatkan apa yang kmu impikan delam
-            karir dan pekerjaanmu. Dan aku akan tetap jadi Bias Paris yang sama yang akan selalu terbuka buat kmu apapun
-            konsisinya.</p>
+            learn about UNCONDITIONAL LOVE, cinta sesungguhnya yang tidak menuntut, berbalas atau tidak, sakit atau
+            sehat, bahagia atau sedih, kaya atau miskin, apapun kondisinya aku tetep sayang kmu. Apapun cerita dan
+            keluhan mu telingaku ada untuk mendengar,tangan ku siap membantu dan selalu terlipat untuk mendoakanmu.
+            Kakiku mungkin bisa lelah, tapi akan tetap melangkah berlari dan berdiri di sampingmu, mataku selalu ada
+            untuk mengagumi dan menjagamu dari jauh. Mulutku selalu ada buat menasehati dan menegur kalau kmu salah,
+            memuji setiap keberhasilanmu dan menguatkan saat kmu lemah. Pundakku selalu ada buat kmu bersandar,
+            pikiranku selalu memikirkan yang terbaik buat kmu. Rumah dan hatiku selalu terbuka buat kmu. I may not have
+            much to offer, but there is one thing I am sure of. You can come to me when you feel like everything is
+            heavy, anytime. I may not have all the answers, but I’ll listen and your heart is safe here. Akan ku
+            dampingi sampe kmu bertemu cowo yang kamu impikan, yang ganteng, cocok, pantas, tulus, baik, effot, mau
+            berjuang buat kmu, takut Tuhan dan mencintaimu apa adanya, sehingga kelak dia bisa mendapatkan Tabita
+            Termiati Makitan dengan versi terbaik. Aku juga akan selalu setia menemani kamu sampai kamu mendapatkan
+            apa yang kmu impikan delam karir dan pekerjaanmu. Dan kalu jalan kita berbeda, aku akan tetap jadi Bias
+            Paris yang sama yang akan selalu terbuka buat kmu apapun konsisinya. GOOO GET ITT TAA!!!...</p>
 
-        <p class="text-content">Aku bukan seorang penulis handal dengan tulisan sederhana tapi kaya makna. Bukan
+        <p class="text-content">Aku bukan seorang penulis handal yang dengan tulisan sederhana tapi kaya makna. Bukan
             juga pemilik wajah rupawan yang charming yang sedap dipandang dan pantas dibanggakan. Bukan juga pria kaya
-            yang punya segalanya. Tapi ini lah aku dengan segala kekurangan, dengan segala kerendahan hati, dengan tulus
-            dan cinta, akan selalu berusaha, belajar, dan memantaskan diri untuk sosok wanita yang ku cintai.</p>
+            raya yang punya segalanya. Tapi ini lah aku dengan segala kekurangan, dengan segala kerendahan hati, dengan
+            tulus dan cinta, akan selalu berusaha, belajar, dan memantaskan diri untuk sosok wanita yang ku cintai.</p>
 
         <p class="text-content green-quote">"Gomawo Ita, sekali lagi kmu merubah aku jauh lebih baik, dan jadi teman
             satu-satunya yang mendengar keluh kesah dan tangisku selama ini. Jujur aku belum pernah punya teman seperti
             kmu, dimana aku berani mengungkapkan segalanya & jadi diri sendiri. Terimakasih juga uda jadi sekretaris
             yang mau berkorban waktu, tenaga, pikiran dan perasaan untuk kami di YTWR. Please jangan menjauh ya, I
-            really love you and I really need you. Happy Birthday. And look at you now, you are stronger, and you are
-            strong enough to face tomorrow."</p>
+            really love you and I really need you. sekali lagi Happy Birthday Itaaaa..."</p>
 
         <p class="signature">The annoying one, <br><br> Bias Paris</p>
 
@@ -564,6 +466,109 @@
 
     </div>
 
+    <!-- Modal Structure -->
+    <div id="tipsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTipsModal()">&times;</span>
+            <div class="carousel-container">
+
+                <div class="carousel-slide">
+                    <p class="p-hed">ADHD Inattentive & anxiety?</p>
+                    <p class="p-car">Khawatir, bingung dan takut itu normal, kita semua ngerasain itu, tapi tiap
+                        orang juga beda cara meresponi perasaan itu, tapi kmu nggak sendiri kok. Ini ada tips simple
+                        yg ku dapet & pelajari belakangan! moga membantu</p>
+                </div>
+
+                <div class="carousel-slide">
+                    <p class="p-hed">Create a Daily Structure</p>
+                    <p class="p-car">Rutin tapi fleksibel. Catat rutinitasmu, ini akan buat harimu lebih
+                        terstruktur. Yang namanya rutinintas pasti berulang, ada baiknya klo kmu punya SOP versimu
+                        sendiri buat nyelesaiin rutinitas tertentu. Tapi inget, tetap flexible dengan koreksi &
+                        perubahan ya, gak semua akan jalan semau-maunya kita.</p>
+                </div>
+
+                <div class="carousel-slide">
+                    <p class="p-hed">Chunking Tasks</p>
+                    <p class="p-car">Pake teknik Pomodoro: 25 menit kerja, 5 menit istirahat, biar kmu fokus & tetap
+                        terjaga. waktunya bisa kamu atur dan sesuikan sendiri, gah harus 25:5. Inget 5 menit
+                        istirahat, jangan bablas, kmu bisa pake alarm atau reminder atau timer di HP atau di Casio
+                        yang ku kasih.</p>
+                </div>
+
+                <div class="carousel-slide">
+                    <p class="p-hed">Visual Reminders</p>
+                    <p class="p-car">Pake Sticky notes atau reminder di HP. Biar tugas penting gak kelewat. Dan klo
+                        ku lihat di ruanganmu uda pakai ini kan, that's good.</p>
+                </div>
+
+                <div class="carousel-slide">
+                    <p class="p-hed">Love Yourself</p>
+                    <p class="p-car">Ingat, Progress over perfection. Jangan terlalu keras sama diri sendiri! Gagal
+                        & gak sesuai rencana itu selalu ada. Rayakan & hargai tiap progres sekecil apapun, you can
+                        do it.</p>
+                </div>
+
+                <div class="carousel-slide">
+                    <p class="p-hed">Physical Activity:</p>
+                    <p class="p-car">Jalan kaki sebentar aja udah cukup kok. Bisa bantu ngurangin anxiety &
+                        ningkatin fokus. Dan kmu uda ngelakuin ini kan, that's great, good job</p>
+                </div>
+                <div class="carousel-slide">
+                    <p class="p-hed">Digital Declutter:</p>
+                    <p class="p-car">Buat workspace digitalmu lebih rapi (di HP atau laptomu), hapus file yg gak
+                        perlu, rapikan folder-foldermu. Batasi distraksi dengan matiin notifikasi di waktu tertentu
+                        & atur screentime buat aplikasi tertentu, biar kamu gak kebablasan.</p>
+                </div>
+
+                <div class="carousel-slide">
+                    <p class="p-hed">Set Boundaries:</p>
+                    <p class="p-car">Jaga energimu, jangan sungkan bilang "nggak" kalau perlu. Juga jadwalkan waktu
+                        buat me time.</p>
+                </div>
+
+                <div class="carousel-slide">
+                    <p class="p-hed">Journaling:</p>
+                    <p class="p-car">Tulis jurnal harianmu, buat tahu apa yang terjadi, hal ini bisa meringankan
+                        beban dan yang secara gak langsung bisa tau triger-trigernya. setelah beberapa waktu, lewat
+                        jurnal ini kamu bisa bercermin lagi & tau seberapa jauh progressmu. Yess, kmu uda molai juga
+                        kan, I'm happy for that.</p>
+                </div>
+
+                <div class="carousel-slide">
+                    <p class="p-hed">Mindful Eating:</p>
+                    <p class="p-car">Makan makanan yang sehat. Biar energi stabil, hindari ngemil saat stres.
+                        Kekenyangan malah bikin meles, ngantuk akhirnya ada domini efek ke hal-hal lainya. Ingat
+                        kata dokter: hindari tepung & manis dulu, kita lihat apakah works hehehe</p>
+                </div>
+
+                <div class="carousel-slide">
+                    <p class="p-hed">Kamu Pasti Bisa!!</p>
+                    <p class="p-car">Jangan lupa, kamu nggak sendirian, ada aku, papa mama, ada Kak Gadi, Mbak Ayu &
+                        Banyu, ada Yonna, ada Kebo, ada juga temenmu yang lainya yang mungkin aku gak kenal, tapi
+                        kamu berani bercerita ke meraka. Kami adalah orang-orang yang sayang & peduli kamu. <br>
+                    <h3>화이팅 💪</h3>
+                    </p>
+                </div>
+
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+            <a class="prev" onclick="prevSlide()">&#10094;</a>
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+        </div>
+    </div>
+
     <script>
         let isBionicMode = false;
 
@@ -573,7 +578,7 @@
                 document.getElementById('passwordContainer').style.display = 'none';
                 document.querySelector('.container').style.display = 'block';
                 document.querySelector('.toggle-button').style.display = 'block';
-                document.querySelector('.tips-button').style.display = 'block'; // Ensure this line is present
+                document.querySelector('.tips-button').style.display = 'block';
             } else {
                 alert('Password salah Tak');
             }
@@ -605,14 +610,15 @@
             button.textContent = isBionicMode ? 'Normal' : 'Bionic';
         }
 
-
         function closeModal() {
             document.getElementById("tipsModal").style.display = "none";
+            document.body.classList.remove("modal-open");
         }
 
         function openModal() {
             document.getElementById("tipsModal").style.display = "block";
-            showSlide(currentSlide); // Ensure the correct slide is shown when opening the modal
+            showSlide(currentSlide);
+            document.body.classList.add("modal-open");
         }
 
         document.querySelector('.close').addEventListener('click', closeModal);
@@ -643,7 +649,6 @@
         window.onload = function () {
             showSlide(currentSlide);
         }
-
     </script>
 </body>
 
