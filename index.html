@@ -237,11 +237,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            /* Center the text */
             flex-direction: column;
             /* Ensure the content stacks vertically */
-            padding: 100px;
+            padding: 40px;
         }
 
         /* Adjustments to the navigation buttons */
@@ -313,20 +311,40 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
+        .p-car,
+        .p-hed {
+            font-family: 'Roboto', sans-serif;
+            /* Font modern dan mudah dibaca di berbagai ukuran layar */
+            margin: 0;
+            /* Menghapus margin default */
+            padding: 0;
+            /* Menghapus padding default */
+        }
+
         .p-car {
-            font-family: 'Lato', sans-serif;
             font-size: 18px;
-            line-height: 1.2;
-            margin: 2px 0;
+            /* Ukuran font yang tetap besar namun lebih pas di mobile */
+            line-height: 1.4;
+            /* Memberikan jarak antar baris yang lebih nyaman */
+            margin-bottom: 8px;
+            /* Jarak bawah untuk memberikan ruang */
+            margin-top: 8px;
+            /* Jarak atas yang konsisten */
         }
 
         .p-hed {
-            font-family: 'Lato', sans-serif;
             font-size: 36px;
+            /* Ukuran font yang tetap menonjol namun tidak terlalu besar */
             line-height: 1.2;
-            font-weight: 800;
+            /* Jarak antar baris yang lebih rapat */
+            font-weight: 700;
+            /* Bold yang lebih pas untuk tampilan mobile */
             color: #004d00;
-            margin: 4px 0;
+            /* Warna teks yang konsisten */
+            margin-bottom: 12px;
+            /* Jarak bawah yang lebih besar untuk visibilitas */
+            margin-top: 12px;
+            /* Jarak atas yang lebih besar */
         }
     </style>
 
